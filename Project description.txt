@@ -1,0 +1,103 @@
+Project Title:
+
+IoT Temperature & Humidity Monitoring using ESP8266 and REST API
+
+Project Description:
+
+This project demonstrates a practical application of the Internet of Things (IoT) by connecting a microcontroller (NodeMCU — ESP8266) to the cloud using a REST API. It enables real-time monitoring of environmental parameters such as temperature and humidity using a DHT11 sensor, and sending this data to a cloud service for visualization, logging, or further processing.
+
+The main idea is to equip the NodeMCU with a DHT11 temperature and humidity sensor, then program it to read sensor values periodically and send them to a REST API endpoint over Wi-Fi. This way, the environmental data can be remotely accessed from anywhere in the world via the internet.
+
+The project uses webhook.site, a free online service for testing HTTP requests, to demonstrate the REST API communication. Every 10 seconds, the ESP8266 sends the sensor data as a JSON object to the REST API endpoint. This data is viewable instantly in the Webhook.site dashboard, allowing verification of the data transmission and format.
+
+Components Required:
+
+NodeMCU ESP8266 (Wi-Fi enabled microcontroller)
+
+DHT11 temperature and humidity sensor
+
+Jumper wires
+
+USB cable for programming and powering the NodeMCU
+
+Computer with Arduino IDE installed
+
+Internet connection
+
+Working Principle:
+
+Wi-Fi Connection: The ESP8266 connects to a local Wi-Fi network using stored SSID and password.
+
+Sensor Reading: The DHT11 sensor measures ambient temperature and humidity.
+
+Data Formatting: The microcontroller formats the readings into a JSON structure.
+
+REST API Request: The ESP8266 sends the JSON data to a cloud endpoint (Webhook.site) via HTTP POST request.
+
+Data Viewing: The request is logged and displayed in Webhook.site for inspection, confirming that the data transfer was successful.
+
+Technical Details:
+
+REST API: Representational State Transfer (REST) is a standard protocol used to send and receive data over HTTP/HTTPS. In this project, POST requests are used to send sensor data to the cloud.
+
+JSON Format: Data is sent in a structured JSON format, e.g.:
+
+{
+  "temperature": 31.7,
+  "humidity": 60.0
+}
+
+
+Libraries Used:
+
+ESP8266WiFi.h → for Wi-Fi connection
+
+ESP8266HTTPClient.h → for HTTP communication
+
+DHT.h → for reading temperature and humidity
+
+Applications:
+
+This simple IoT project can be scaled and adapted for multiple real-world applications, such as:
+
+Remote weather monitoring systems
+
+Smart home automation
+
+Industrial environment monitoring
+
+Agricultural climate control
+
+Educational IoT demonstrations
+
+Advantages:
+
+Low-cost, easy to build
+
+Demonstrates real IoT communication
+
+No additional hardware required beyond Wi-Fi-enabled microcontroller and sensor
+
+Uses REST API, a universal IoT communication standard
+
+Limitations:
+
+Requires stable Wi-Fi connection
+
+DHT11 is a basic sensor and less accurate than DHT22
+
+This demo uses HTTP for simplicity; HTTPS is recommended for real-world secure applications
+
+Future Improvements:
+
+Upgrade sensor to DHT22 for higher accuracy
+
+Use HTTPS for secure REST API communication
+
+Send data to a real IoT platform like ThingSpeak, Blynk, or AWS IoT
+
+Add multiple sensors and integrate cloud dashboard for live monitoring
+
+Summary:
+
+This project shows how to interface a NodeMCU ESP8266 with a DHT11 sensor and send real-time data to the cloud using REST API. It’s a foundational example of IoT, useful for learning wireless data communication, sensor interfacing, and cloud integration.
