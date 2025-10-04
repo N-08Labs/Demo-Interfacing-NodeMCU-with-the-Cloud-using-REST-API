@@ -1,0 +1,5 @@
+This project demonstrates a practical application of the Internet of Things (IoT) by connecting a microcontroller (NodeMCU — ESP8266) to the cloud using a REST API. It enables real-time monitoring of environmental parameters such as temperature and humidity using a DHT11 sensor, and sending this data to a cloud service for visualization, logging, or further processing.
+
+The main idea is to equip the NodeMCU with a DHT11 temperature and humidity sensor, then program it to read sensor values periodically and send them to a REST API endpoint over Wi-Fi. This way, the environmental data can be remotely accessed from anywhere in the world via the internet.
+
+The project uses webhook.site, a free online service for testing HTTP requests, to demonstrate the REST API communication. Every 10 seconds, the ESP8266 sends the sensor data as a JSON object to the REST API endpoint. This data is viewable instantly in the Webhook.site dashboard, allowing verification of the data transmission and format.
